@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Impressum · Tributum Steuerberatung Berlin</title>
+  <meta name="description" content="Impressum der Tributum Steuer- und Anwaltskanzlei Claudia Paschke, Berlin." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
+
+  <style>
+    /* ─── Tokens (identisch mit index.html) ─── */
+    :root {
+      --ink:       #282828;
+      --ink-80:    #3d3d3d;
+      --ink-70:    #555;
+      --ink-60:    #6e6e6e;
+      --ink-50:    #888;
+      --ink-30:    #bcbcbc;
+      --ink-20:    #d3d3d3;
+      --ink-15:    #dfdfdf;
+
+      --paper:      #f5f0e8;
+      --paper-warm: #ede5d6;
+      --p70: rgba(245,240,232,.7);
+      --p60: rgba(245,240,232,.6);
+      --p50: rgba(245,240,232,.5);
+      --p30: rgba(245,240,232,.3);
+      --p20: rgba(245,240,232,.2);
+      --p15: rgba(245,240,232,.15);
+      --p08: rgba(245,240,232,.08);
+
+      --brass:      #c9a35d;
+
+      --fd: 'Cormorant Garamond', serif;
+      --fb: 'Inter Tight', system-ui, sans-serif;
+      --fm: 'JetBrains Mono', monospace;
+
+      --nav-h: 88px;
+      --max:   1440px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--fb); background: var(--paper); color: var(--ink); -webkit-font-smoothing: antialiased; }
+    img  { display: block; }
+
+    /* ─── Nav ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      height: var(--nav-h);
+      background: var(--ink);
+      border-bottom: 1px solid var(--p08);
+      display: grid; grid-template-columns: 1fr auto 1fr; align-items: center;
+      padding: 0 56px; gap: 40px;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 14px;
+      text-decoration: none; flex-shrink: 0;
+    }
+    .nav-logo img { height: 74px; object-fit: contain; }
+    .nav-mark { display: flex; flex-direction: column; gap: 6px; }
+    .nav-mark__word {
+      font-family: var(--fd); font-weight: 600; font-size: 26px;
+      text-transform: uppercase; letter-spacing: .42em; text-align: center;
+      color: var(--paper); line-height: 1;
+      padding-left: .42em; /* compensates trailing letter-spacing gap so visible text is optically centered over .nav-mark__rule */
+    }
+    .nav-mark__rule { height: 1px; background: var(--p20); }
+    .nav-mark__sub {
+      font-family: var(--fm); font-size: 10px; letter-spacing: .16em;
+      text-transform: uppercase; color: var(--p50); text-align: center;
+    }
+    .nav-links {
+      display: flex; gap: 40px; list-style: none; justify-self: center;
+    }
+    .nav-links a {
+      font-family: var(--fm); font-size: 13px; letter-spacing: .14em;
+      text-transform: uppercase; color: var(--p60);
+      text-decoration: none; transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--paper); }
+
+    .nav-cta {
+      font-family: var(--fm); font-size: 13px; letter-spacing: .16em;
+      text-transform: uppercase; color: var(--paper);
+      text-decoration: none; flex-shrink: 0;
+      border: 1px solid var(--brass); padding: 14px 30px;
+      margin-right: 16px;
+      transition: background .2s, color .2s, transform .15s cubic-bezier(.23,1,.32,1);
+      justify-self: end;
+    }
+    .nav-cta:hover { background: var(--brass); color: var(--ink); }
+    .nav-cta:active { transform: scale(.97); }
+
+    /* ─── Page Hero ─── */
+    .page-hero {
+      padding-top: var(--nav-h);
+      background: var(--ink);
+    }
+    .page-hero-in {
+      max-width: var(--max); margin: 0 auto;
+      padding: 80px 96px 72px;
+      display: grid; grid-template-columns: 140px 1fr;
+      gap: 48px; align-items: start;
+    }
+    .ph-num-col { display: flex; flex-direction: column; gap: 12px; }
+    .ph-num {
+      font-family: var(--fm); font-size: 17px; letter-spacing: .18em;
+      text-transform: uppercase; color: var(--brass);
+    }
+    .ph-title {
+      font-family: var(--fd); font-weight: 500;
+      font-size: clamp(56px, 6vw, 100px);
+      line-height: .93; letter-spacing: -.03em; color: var(--paper);
+    }
+    .ph-title em { font-style: italic; color: var(--paper); }
+    .ph-sub {
+      font-family: var(--fm); font-size: 11px; letter-spacing: .16em;
+      text-transform: uppercase; color: var(--p50); margin-top: 24px;
+    }
+
+    /* ─── Main Content ─── */
+    main {
+      max-width: var(--max); margin: 0 auto;
+      padding: 96px 96px 120px;
+    }
+
+    .block { margin-bottom: 72px; }
+    .block:last-of-type { margin-bottom: 0; }
+
+    .block-head {
+      display: grid; grid-template-columns: 140px 1fr;
+      gap: 48px; align-items: baseline;
+      padding-bottom: 28px; border-bottom: 1px solid var(--ink-20);
+      margin-bottom: 40px;
+    }
+    .block-num {
+      font-family: var(--fm); font-size: 17px; letter-spacing: .18em;
+      text-transform: uppercase; color: var(--brass);
+    }
+    .block-title {
+      font-family: var(--fd); font-weight: 500;
+      font-size: clamp(32px, 3.5vw, 52px);
+      line-height: 1; letter-spacing: -.025em; color: var(--ink);
+    }
+
+    .block-body {
+      display: grid; grid-template-columns: 140px 1fr;
+      gap: 48px;
+    }
+    .block-body p {
+      font-size: 17px; line-height: 1.75; color: var(--ink-70);
+    }
+    .block-body p + p { margin-top: 16px; }
+    .block-body strong { color: var(--ink); font-weight: 600; }
+    .block-body a { color: var(--ink); text-underline-offset: 3px; }
+    .block-body a:hover { color: var(--brass); }
+
+    /* ─── Data-Rows (Tabellen-Zeilen) ─── */
+    .data-table { width: 100%; }
+    .data-row {
+      display: grid; grid-template-columns: 220px 1fr;
+      gap: 24px; padding: 18px 0;
+      border-bottom: 1px solid var(--ink-15);
+    }
+    .data-row:first-child { border-top: 1px solid var(--ink-15); }
+    .data-row__label {
+      font-family: var(--fm); font-size: 11px; letter-spacing: .14em;
+      text-transform: uppercase; color: var(--ink-50); padding-top: 3px;
+    }
+    .data-row__value {
+      font-size: 17px; line-height: 1.65; color: var(--ink-70);
+    }
+    .data-row__value a { color: var(--ink); text-underline-offset: 3px; }
+    .data-row__value a:hover { color: var(--brass); }
+
+    /* ─── Footer (identisch mit index.html) ─── */
+    footer { background: #1c1c1c; position: relative; overflow: hidden; }
+    .footer-mark {
+      position: absolute; right: 20px; bottom: 0;
+      height: 380px; opacity: .12; pointer-events: none;
+    }
+    .footer-in {
+      max-width: var(--max); margin: 0 auto;
+      padding: 80px 96px 48px; position: relative; z-index: 2;
+    }
+    .footer-top {
+      display: grid; grid-template-columns: max-content repeat(3,180px);
+      justify-content: space-between; align-items: flex-start;
+      gap: 56px; padding-bottom: 64px;
+      border-bottom: 1px solid rgba(245,240,232,.07); margin-bottom: 48px;
+    }
+    .footer-brand__name {
+      font-family: var(--fd); font-weight: 600; font-size: 40px;
+      text-transform: uppercase; letter-spacing: .06em; color: var(--paper); margin-bottom: 6px; line-height: 1;
+    }
+    .footer-brand__sub {
+      font-family: var(--fm); font-size: 9px; letter-spacing: .18em;
+      text-transform: uppercase; color: rgba(245,240,232,.35);
+    }
+    .footer-brand__contact {
+      margin-top: 24px;
+      font-family: var(--fm); font-size: 11px; letter-spacing: .11em;
+      text-transform: uppercase; color: rgba(245,240,232,.4); line-height: 2.4;
+    }
+    .footer-cols { display: contents; }
+    .footer-col__title {
+      font-family: var(--fm); font-size: 11px; letter-spacing: .16em;
+      text-transform: uppercase; color: var(--brass); margin-bottom: 20px;
+    }
+    .footer-col__links { list-style: none; display: flex; flex-direction: column; gap: 13px; }
+    .footer-col__links a {
+      font-size: 15px; color: rgba(245,240,232,.5);
+      text-decoration: none; transition: color .2s;
+    }
+    .footer-col__links a:hover { color: var(--paper); }
+    .footer-bottom {
+      display: flex; justify-content: space-between; align-items: center;
+      padding-top: 24px; border-top: 1px solid rgba(245,240,232,.05);
+    }
+    .footer-legal {
+      font-family: var(--fm); font-size: 10px; letter-spacing: .12em;
+      text-transform: uppercase; color: rgba(245,240,232,.3); display: flex; gap: 24px;
+    }
+    .footer-legal a { color: inherit; text-decoration: none; }
+    .footer-legal a:hover { color: rgba(245,240,232,.5); }
+
+    @media (max-width: 768px) {
+      nav { padding: 0 24px; }
+      .nav-links { display: none; }
+      .page-hero-in, main { padding-left: 28px; padding-right: 28px; }
+      .page-hero-in, .block-head, .block-body { grid-template-columns: 1fr; gap: 16px; }
+      .ph-num-col, .block-num-col { display: none; }
+      .data-row { grid-template-columns: 1fr; gap: 4px; }
+      .footer-in { padding: 56px 28px 40px; }
+      .footer-top { display: flex; flex-direction: column; gap: 40px; }
+      .footer-cols { display: grid; grid-template-columns: repeat(2,1fr); gap: 56px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="Tributum Brandkit/assets/justitia-on-dark.png" alt="Tributum">
+    <div class="nav-mark">
+      <div class="nav-mark__word">Tributum</div>
+      <div class="nav-mark__rule"></div>
+      <div class="nav-mark__sub">Steuerberatung &amp; Rechtsberatung</div>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#leistungen">Leistungen</a></li>
+    <li><a href="index.html#mandanten">Mandanten</a></li>
+    <li><a href="ueber-uns.html">Über uns</a></li>
+    <li><a href="index.html#kontakt">Kontakt</a></li>
+  </ul>
+  <a href="index.html#erstgespraech" class="nav-cta">Erstgespräch →</a>
+</nav>
+
+
+<div class="page-hero">
+  <div class="page-hero-in">
+    <div class="ph-num-col">
+      <div class="ph-num">Legal</div>
+      <hr style="border:none;border-top:1px solid var(--p15);margin-top:4px;flex:1">
+    </div>
+    <div>
+      <h1 class="ph-title">Im&shy;pres&shy;<em>sum.</em></h1>
+      <div class="ph-sub">Angaben gemäß §5 TMG · §2 DL-InfoV</div>
+    </div>
+  </div>
+</div>
+
+
+<main>
+
+  <div class="block">
+    <div class="block-head">
+      <span class="block-num">01</span>
+      <h2 class="block-title">Verantwortlich</h2>
+    </div>
+    <div class="block-body">
+      <div></div>
+      <div class="data-table">
+        <div class="data-row">
+          <div class="data-row__label">Kanzlei</div>
+          <div class="data-row__value">Tributum Steuer- und Anwaltskanzlei Claudia Paschke</div>
+        </div>
+        <div class="data-row">
+          <div class="data-row__label">Inhaberin</div>
+          <div class="data-row__value">Claudia Paschke</div>
+        </div>
+        <div class="data-row">
+          <div class="data-row__label">Adresse</div>
+          <div class="data-row__value">Am Schlangenhorst 50<br>14656 Brieselang</div>
+        </div>
+        <div class="data-row">
+          <div class="data-row__label">Telefon</div>
+          <div class="data-row__value"><a href="tel:+4917151411130">+49 171 5141130</a></div>
+        </div>
+        <div class="data-row">
+          <div class="data-row__label">E-Mail</div>
+          <div class="data-row__value"><a href="mailto:hello@tributum-berlin.com">hello@tributum-berlin.com</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="block-head">
+      <span class="block-num">02</span>
+      <h2 class="block-title">Aufsichts&shy;behörde</h2>
+    </div>
+    <div class="block-body">
+      <div></div>
+      <div class="data-table">
+        <div class="data-row">
+          <div class="data-row__label">Kammer</div>
+          <div class="data-row__value">Rechtsanwaltskammer Brandenburg</div>
+        </div>
+        <div class="data-row">
+          <div class="data-row__label">Berufsrecht</div>
+          <div class="data-row__value">Bundesrechtsanwaltsordnung (BRAO)<br>Steuerberatungsgesetz (StBerG)<br>Berufsordnung für Rechtsanwälte (BORA)<br>Rechtsanwaltsvergütungsgesetz (RVG) i. V. m. der Steuerberatervergütungsverordnung (StBVV)<br>Berufsregeln der Rechtsanwälte der Europäischen Union (CCBE)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="block-head">
+      <span class="block-num">03</span>
+      <h2 class="block-title">Berufs&shy;haftpflicht</h2>
+    </div>
+    <div class="block-body">
+      <div></div>
+      <div class="data-table">
+        <div class="data-row">
+          <div class="data-row__label">Versicherer</div>
+          <div class="data-row__value">ERGO Versicherungs AG</div>
+        </div>
+        <div class="data-row">
+          <div class="data-row__label">Geltungsbereich</div>
+          <div class="data-row__value">Bundesrepublik Deutschland</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="block-head">
+      <span class="block-num">04</span>
+      <h2 class="block-title">Haftungs&shy;hinweis</h2>
+    </div>
+    <div class="block-body">
+      <div></div>
+      <div>
+        <p>Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.</p>
+        <p>Die durch uns erstellten Inhalte und Werke auf dieser Website unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechts bedürfen der schriftlichen Zustimmung des jeweiligen Autors.</p>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+
+<footer>
+  <img src="Tributum Brandkit/assets/justitia.png" alt="" class="footer-mark">
+  <div class="footer-in">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand__name">Tributum</div>
+        <div class="footer-brand__sub">Steuerberatung &amp; Rechtsberatung</div>
+        <div class="footer-brand__contact">
+          Am Schlangenhorst 50 · 14656 Brieselang<br>
+          hello@tributum-berlin.com<br>
+          +49 171 5141130
+        </div>
+      </div>
+      <div class="footer-cols">
+        <div>
+          <div class="footer-col__title">Leistungen</div>
+          <ul class="footer-col__links">
+            <li><a href="index.html#leistungen">Digitale Buchhaltung</a></li>
+            <li><a href="index.html#leistungen">EÜR &amp; Jahresabschlüsse</a></li>
+            <li><a href="index.html#leistungen">Existenzgründung &amp; GmbH-Gründung</a></li>
+            <li><a href="index.html#leistungen">Steuer- &amp; Rechtsberatung</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col__title">Kanzlei</div>
+          <ul class="footer-col__links">
+            <li><a href="ueber-uns.html">Über uns</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
+            <li><a href="index.html#erstgespraech">Erstgespräch</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col__title">Rechtliches</div>
+          <ul class="footer-col__links">
+            <li><a href="impressum.html">Impressum</a></li>
+            <li><a href="datenschutz.html">Datenschutz</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-legal">
+        <span>© 2026 TRIBUTUM Steuer- und Anwaltskanzlei Claudia Paschke</span>
+        <span>Alle Rechte vorbehalten</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

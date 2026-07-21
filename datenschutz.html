@@ -1,0 +1,575 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Datenschutzerklärung · Tributum Steuerberatung Berlin</title>
+  <meta name="description" content="Datenschutzerklärung der Tributum Steuer- und Anwaltskanzlei Claudia Paschke gemäß DSGVO." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
+
+  <style>
+    :root {
+      --ink:       #282828;
+      --ink-80:    #3d3d3d;
+      --ink-70:    #555;
+      --ink-60:    #6e6e6e;
+      --ink-50:    #888;
+      --ink-30:    #bcbcbc;
+      --ink-20:    #d3d3d3;
+      --ink-15:    #dfdfdf;
+      --paper:      #f5f0e8;
+      --paper-warm: #ede5d6;
+      --p70: rgba(245,240,232,.7);
+      --p60: rgba(245,240,232,.6);
+      --p50: rgba(245,240,232,.5);
+      --p30: rgba(245,240,232,.3);
+      --p20: rgba(245,240,232,.2);
+      --p15: rgba(245,240,232,.15);
+      --p08: rgba(245,240,232,.08);
+      --brass: #c9a35d;
+      --fd: 'Cormorant Garamond', serif;
+      --fb: 'Inter Tight', system-ui, sans-serif;
+      --fm: 'JetBrains Mono', monospace;
+      --nav-h: 88px;
+      --max: 1440px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--fb); background: var(--paper); color: var(--ink); -webkit-font-smoothing: antialiased; }
+    img { display: block; }
+
+    /* ─── Nav ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      height: var(--nav-h); background: var(--ink);
+      border-bottom: 1px solid var(--p08);
+      display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; padding: 0 56px; gap: 40px;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 14px; text-decoration: none; flex-shrink: 0; }
+    .nav-logo img { height: 74px; object-fit: contain; }
+    .nav-mark { display: flex; flex-direction: column; gap: 6px; }
+    .nav-mark__word { font-family: var(--fd); font-weight: 600; font-size: 26px; text-transform: uppercase; letter-spacing: .42em; text-align: center; color: var(--paper); line-height: 1; padding-left: .42em; }
+    .nav-mark__rule { height: 1px; background: var(--p20); }
+    .nav-mark__sub { font-family: var(--fm); font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: var(--p50); text-align: center; }
+    .nav-links { display: flex; gap: 40px; list-style: none; justify-self: center; }
+    .nav-links a { font-family: var(--fm); font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--p60); text-decoration: none; transition: color .2s; }
+    .nav-links a:hover { color: var(--paper); }
+    .nav-cta {
+      font-family: var(--fm); font-size: 13px; letter-spacing: .16em;
+      text-transform: uppercase; color: var(--paper); text-decoration: none; flex-shrink: 0;
+      border: 1px solid var(--brass); padding: 14px 30px; margin-right: 16px;
+      transition: background .2s, color .2s, transform .15s cubic-bezier(.23,1,.32,1);
+      justify-self: end;
+    }
+    .nav-cta:hover { background: var(--brass); color: var(--ink); }
+    .nav-cta:active { transform: scale(.97); }
+
+    /* ─── Page Hero ─── */
+    .page-hero { padding-top: var(--nav-h); background: var(--ink); }
+    .page-hero-in {
+      max-width: var(--max); margin: 0 auto;
+      padding: 80px 96px 72px;
+      display: grid; grid-template-columns: 140px 1fr;
+      gap: 48px; align-items: start;
+    }
+    .ph-num-col { display: flex; flex-direction: column; gap: 12px; }
+    .ph-num { font-family: var(--fm); font-size: 17px; letter-spacing: .18em; text-transform: uppercase; color: var(--brass); }
+    .ph-title { font-family: var(--fd); font-weight: 500; font-size: clamp(56px,6vw,100px); line-height: .93; letter-spacing: -.03em; color: var(--paper); }
+    .ph-title em { font-style: italic; color: var(--paper); }
+    .ph-sub { font-family: var(--fm); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--p50); margin-top: 24px; }
+
+    /* ─── Preamble ─── */
+    .preamble {
+      max-width: var(--max); margin: 0 auto;
+      padding: 64px 96px 0;
+      display: grid; grid-template-columns: 140px 1fr; gap: 48px;
+    }
+    .preamble p { font-size: 17px; line-height: 1.75; color: var(--ink-60); }
+
+    /* ─── Main ─── */
+    main { max-width: var(--max); margin: 0 auto; padding: 72px 96px 120px; }
+
+    .block { margin-bottom: 72px; }
+    .block:last-of-type { margin-bottom: 0; }
+
+    .block-head {
+      display: grid; grid-template-columns: 140px 1fr;
+      gap: 48px; align-items: baseline;
+      padding-bottom: 28px; border-bottom: 1px solid var(--ink-20);
+      margin-bottom: 40px;
+    }
+    .block-num { font-family: var(--fm); font-size: 17px; letter-spacing: .18em; text-transform: uppercase; color: var(--brass); }
+    .block-title { font-family: var(--fd); font-weight: 500; font-size: clamp(32px,3.5vw,52px); line-height: 1; letter-spacing: -.025em; color: var(--ink); }
+
+    .block-body { display: grid; grid-template-columns: 140px 1fr; gap: 48px; }
+    .block-body p { font-size: 17px; line-height: 1.75; color: var(--ink-70); }
+    .block-body p + p { margin-top: 16px; }
+    .block-body strong { color: var(--ink); font-weight: 600; }
+    .block-body a { color: var(--ink); text-underline-offset: 3px; }
+    .block-body a:hover { color: var(--brass); }
+
+    /* ─── Data-Rows ─── */
+    .data-table { width: 100%; }
+    .data-row { display: grid; grid-template-columns: 220px 1fr; gap: 24px; padding: 18px 0; border-bottom: 1px solid var(--ink-15); }
+    .data-row:first-child { border-top: 1px solid var(--ink-15); }
+    .data-row__label { font-family: var(--fm); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-50); padding-top: 3px; }
+    .data-row__value { font-size: 17px; line-height: 1.65; color: var(--ink-70); }
+    .data-row__value a { color: var(--ink); text-underline-offset: 3px; }
+    .data-row__value a:hover { color: var(--brass); }
+
+    /* ─── Rechtsgrundlagen-Grid ─── */
+    .basis-grid { border-top: 1px solid var(--ink-15); }
+    .basis-item { display: grid; grid-template-columns: 280px 1fr; gap: 48px; padding: 32px 0; border-bottom: 1px solid var(--ink-15); align-items: start; }
+    .basis-item__ref { font-family: var(--fm); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--brass); padding-top: 4px; line-height: 1.6; }
+    .basis-item__title { font-family: var(--fd); font-weight: 500; font-size: clamp(20px,1.8vw,28px); letter-spacing: -.015em; color: var(--ink); margin-bottom: 12px; line-height: 1; }
+    .basis-item__body { font-size: 17px; line-height: 1.75; color: var(--ink-70); }
+
+    /* ─── Rechte-Grid ─── */
+    .rights-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--ink-15); outline: 1px solid var(--ink-15); }
+    .rights-item { background: var(--paper); padding: 32px 36px; transition: background .2s; }
+    .rights-item:hover { background: var(--paper-warm); }
+    .rights-item__art { font-family: var(--fm); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--brass); margin-bottom: 10px; }
+    .rights-item__title { font-family: var(--fd); font-weight: 500; font-size: clamp(20px,1.8vw,28px); letter-spacing: -.015em; color: var(--ink); margin-bottom: 10px; line-height: 1; }
+    .rights-item__text { font-size: 15px; line-height: 1.7; color: var(--ink-60); }
+    .rights-item__list { list-style: none; margin-top: 10px; display: flex; flex-direction: column; gap: 6px; }
+    .rights-item__list li { font-size: 14px; line-height: 1.6; color: var(--ink-60); padding-left: 18px; position: relative; }
+    .rights-item__list li::before { content: '—'; position: absolute; left: 0; color: var(--brass); font-family: var(--fm); font-size: 10px; top: 3px; }
+
+    /* ─── Bullet-Lists im Fließtext ─── */
+    .block-body ul { list-style: none; margin-top: 20px; display: flex; flex-direction: column; gap: 0; }
+    .block-body ul li { font-size: 17px; line-height: 1.75; color: var(--ink-70); padding: 12px 0 12px 24px; border-bottom: 1px solid var(--ink-15); position: relative; }
+    .block-body ul li:first-child { border-top: 1px solid var(--ink-15); }
+    .block-body ul li::before { content: '—'; position: absolute; left: 0; color: var(--brass); font-family: var(--fm); font-size: 11px; top: 14px; }
+
+    /* ─── Footer ─── */
+    footer { background: #1c1c1c; position: relative; overflow: hidden; }
+    .footer-mark { position: absolute; right: 20px; bottom: 0; height: 380px; opacity: .12; pointer-events: none; }
+    .footer-in { max-width: var(--max); margin: 0 auto; padding: 80px 96px 48px; position: relative; z-index: 2; }
+    .footer-top { display: grid; grid-template-columns: max-content repeat(3,180px); justify-content: space-between; align-items: flex-start; gap: 56px; padding-bottom: 64px; border-bottom: 1px solid rgba(245,240,232,.07); margin-bottom: 48px; }
+    .footer-brand__name { font-family: var(--fd); font-weight: 600; font-size: 40px; text-transform: uppercase; letter-spacing: .06em; color: var(--paper); margin-bottom: 6px; line-height: 1; }
+    .footer-brand__sub { font-family: var(--fm); font-size: 9px; letter-spacing: .18em; text-transform: uppercase; color: rgba(245,240,232,.35); }
+    .footer-brand__contact { margin-top: 24px; font-family: var(--fm); font-size: 11px; letter-spacing: .11em; text-transform: uppercase; color: rgba(245,240,232,.4); line-height: 2.4; }
+    .footer-cols { display: contents; }
+    .footer-col__title { font-family: var(--fm); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--brass); margin-bottom: 20px; }
+    .footer-col__links { list-style: none; display: flex; flex-direction: column; gap: 13px; }
+    .footer-col__links a { font-size: 15px; color: rgba(245,240,232,.5); text-decoration: none; transition: color .2s; }
+    .footer-col__links a:hover { color: var(--paper); }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 24px; border-top: 1px solid rgba(245,240,232,.05); }
+    .footer-legal { font-family: var(--fm); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: rgba(245,240,232,.3); display: flex; gap: 24px; }
+    .footer-legal a { color: inherit; text-decoration: none; }
+    .footer-legal a:hover { color: rgba(245,240,232,.5); }
+
+    @media (max-width: 768px) {
+      nav { padding: 0 24px; }
+      .nav-links { display: none; }
+      .page-hero-in, .preamble, main { padding-left: 28px; padding-right: 28px; }
+      .page-hero-in, .preamble, .block-head, .block-body { grid-template-columns: 1fr; gap: 16px; }
+      .ph-num-col { display: none; }
+      .data-row, .basis-item { grid-template-columns: 1fr; gap: 6px; }
+      .rights-grid { grid-template-columns: 1fr; }
+      .footer-in { padding: 56px 28px 40px; }
+      .footer-top { display: flex; flex-direction: column; gap: 40px; }
+      .footer-cols { display: grid; grid-template-columns: repeat(2,1fr); gap: 56px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="Tributum Brandkit/assets/justitia-on-dark.png" alt="Tributum">
+    <div class="nav-mark">
+      <div class="nav-mark__word">Tributum</div>
+      <div class="nav-mark__rule"></div>
+      <div class="nav-mark__sub">Steuerberatung &amp; Rechtsberatung</div>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#leistungen">Leistungen</a></li>
+    <li><a href="index.html#mandanten">Mandanten</a></li>
+    <li><a href="ueber-uns.html">Über uns</a></li>
+    <li><a href="index.html#kontakt">Kontakt</a></li>
+  </ul>
+  <a href="index.html#erstgespraech" class="nav-cta">Erstgespräch →</a>
+</nav>
+
+
+<div class="page-hero">
+  <div class="page-hero-in">
+    <div class="ph-num-col">
+      <div class="ph-num">Legal</div>
+      <hr style="border:none;border-top:1px solid var(--p15);margin-top:4px;flex:1">
+    </div>
+    <div>
+      <h1 class="ph-title">Daten&shy;schutz&shy;<em>erklärung.</em></h1>
+      <div class="ph-sub">Pflichtinformationen gem. Art. 12 ff. DS-GVO · Stand Mai 2026</div>
+    </div>
+  </div>
+</div>
+
+
+<div class="preamble">
+  <div></div>
+  <p>Der Schutz Ihrer persönlichen Daten ist uns ein besonderes Anliegen. Wir verarbeiten Ihre Daten daher ausschließlich auf Grundlage der gesetzlichen Bestimmungen (DSGVO, BDSG). In diesen Datenschutzinformationen informieren wir Sie über die wichtigsten Aspekte der Datenverarbeitung im Rahmen unserer Website.</p>
+</div>
+
+
+<main>
+
+  <!-- 01 Kontaktdaten -->
+  <div class="block">
+    <div class="block-head">
+      <span class="block-num">01</span>
+      <h2 class="block-title">Kontaktdaten des Verantwortlichen</h2>
+    </div>
+    <div class="block-body">
+      <div></div>
+      <div>
+        <div class="data-table">
+          <div class="data-row">
+            <div class="data-row__label">Name</div>
+            <div class="data-row__value">Claudia Paschke</div>
+          </div>
+          <div class="data-row">
+            <div class="data-row__label">Unternehmen</div>
+            <div class="data-row__value">Tributum Steuer- und Anwaltskanzlei Claudia Paschke</div>
+          </div>
+          <div class="data-row">
+            <div class="data-row__label">Anschrift</div>
+            <div class="data-row__value">Am Schlangenhorst 50, 14656 Brieselang</div>
+          </div>
+          <div class="data-row">
+            <div class="data-row__label">Telefon</div>
+            <div class="data-row__value"><a href="tel:+4917151411130">+49 171 5141130</a></div>
+          </div>
+          <div class="data-row">
+            <div class="data-row__label">E-Mail</div>
+            <div class="data-row__value"><a href="mailto:hello@tributum-berlin.com">hello@tributum-berlin.com</a></div>
+          </div>
+          <div class="data-row">
+            <div class="data-row__label">Datenschutz&shy;beauftragter</div>
+            <div class="data-row__value">Claudia Paschke · Am Schlangenhorst 50 · <a href="mailto:hello@tributum-berlin.com">hello@tributum-berlin.com</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 02 Herkunft der Daten -->
+  <div class="block">
+    <div class="block-head">
+      <span class="block-num">02</span>
+      <h2 class="block-title">Woher beziehen wir Ihre personenbezogenen Daten?</h2>
+    </div>
+    <div class="block-body">
+      <div></div>
+      <div>
+        <p>Die Erhebung Ihrer Daten findet grundsätzlich bei Ihnen selbst statt. Die Verarbeitung der von Ihnen überlassenen personenbezogenen Daten ist zur Erfüllung der vertraglichen Pflichten, die sich aus dem mit uns geschlossenen Vertrag ergeben, notwendig. Aufgrund Ihrer Mitwirkungspflichten ist es unumgänglich die von uns angeforderten personenbezogenen Daten zur Verfügung zu stellen, da wir ansonsten unseren vertraglichen Pflichten nicht nachkommen können. Buchhalterische und/oder steuerliche Nachteile für Sie können sonst nicht mehr ausgeschlossen werden. Im Rahmen vorvertraglicher Maßnahmen (z. B. Stammdatenerfassung im Interessentenprozess) ist die Bereitstellung Ihrer personenbezogenen Daten notwendig. Sollten die angeforderten Daten nicht von Ihnen bereitgestellt werden, kann ein Vertrag nicht abgeschlossen werden.</p>
+        <p>Zur Erbringung unserer Dienstleistungen kann es erforderlich sein, personenbezogene Daten zu verarbeiten, die wir von anderen Unternehmen oder sonstigen Dritten, z. B. Finanzämtern, Ihren Geschäftspartner o. ä. zulässigerweise und zu dem jeweiligen Zweck erhalten haben.</p>
+        <p>Weiterhin verarbeiten wir ggf. personenbezogene Daten aus öffentlich zugänglichen Quellen, z. B. Internetauftritten, die wir zulässigerweise und nur zu dem jeweiligen Vertragszweck nutzen.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 03 Rechtsgrundlagen -->
+  <div class="block">
+    <div class="block-head">
+      <span class="block-num">03</span>
+      <h2 class="block-title">Zwecke und Rechtsgrundlagen der Verarbeitung</h2>
+    </div>
+    <div class="block-body">
+      <div></div>
+      <div>
+        <p>Die von Ihnen überlassenen personenbezogenen Daten werden im Einklang mit den Bestimmungen der europäischen Datenschutzverordnung (DS-GVO) und dem Bundesdatenschutzgesetz (BDSG) verarbeitet:</p>
+        <div class="basis-grid" style="margin-top:32px">
+          <div class="basis-item">
+            <div class="basis-item__ref">Art. 6 Abs. 1 Lit. a DS-GVO</div>
+            <div>
+              <div class="basis-item__title">Einwilligung</div>
+              <p class="basis-item__body">Die Zwecke der Verarbeitung personenbezogener Daten ergeben sich aus der Erteilung einer Einwilligung. Eine erteilte Einwilligung kann jederzeit von Ihnen mit Wirkung für die Zukunft widerrufen werden. Auch Einwilligungen, die vor der Geltung der DS-GVO (25. Mai 2018) erteilt worden sind, können widerrufen werden. Verarbeitungen, die vor dem Widerruf erfolgt sind, bleiben vom Widerruf unberührt. Beispiel: Zusendung eines Newsletters, Entbindung von der berufsrechtlichen Verschwiegenheit zur Weitergabe der von Ihnen überlassenen Daten auf Ihren Wunsch hin an Dritte (z. B. Banken, Versicherungen, Anteilseigner etc.).</p>
+            </div>
+          </div>
+          <div class="basis-item">
+            <div class="basis-item__ref">Art. 6 Abs. 1 Lit. b DS-GVO</div>
+            <div>
+              <div class="basis-item__title">Vertragliche Pflichten</div>
+              <p class="basis-item__body">Die Zwecke der Datenverarbeitung ergeben sich zum einen aus der Einleitung vorvertraglicher Maßnahmen, die einer vertraglich geregelten Geschäftsbeziehung vorausgehen und zum anderen zur Erfüllung der Pflichten aus dem mit Ihnen geschlossenen Vertrag.</p>
+            </div>
+          </div>
+          <div class="basis-item">
+            <div class="basis-item__ref">Art. 6 Abs. 1 Lit. c / Lit. e DS-GVO</div>
+            <div>
+              <div class="basis-item__title">Gesetzliche Vorgaben</div>
+              <p class="basis-item__body">Die Zwecke der Datenverarbeitung ergeben sich aus gesetzlichen Vorgaben oder liegen im öffentlichen Interesse (z. B. Einhaltung von Aufbewahrungspflichten, Nachweis der Einhaltung von Hinweis- und Informationspflichten des Steuerberaters).</p>
+            </div>
+          </div>
+          <div class="basis-item">
+            <div class="basis-item__ref">Art. 6 Abs. 1 Lit. f DS-GVO</div>
+            <div>
+              <div class="basis-item__title">Interessenabwägung</div>
+              <p class="basis-item__body">Die Zwecke der Verarbeitung ergeben sich aus der Wahrung unserer berechtigten Interessen. Es kann erforderlich sein, die von Ihnen überlassenen Daten über die eigentliche Erfüllung des Vertrages hinaus zu verarbeiten. Unser berechtigtes Interesse kann zur Begründung der weiteren Verarbeitung der von Ihnen überlassenen Daten herangezogen werden, sofern Ihre Interessen oder Grundrechte und Grundfreiheiten nicht überwiegen. Unser berechtigtes Interesse kann im Einzelfall sein: Geltendmachung rechtlicher Ansprüche, Abwehr von Haftungsansprüchen, Verhinderung von Straftaten.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 04 Datenempfänger -->
+  <div class="block">
+    <div class="block-head">
+      <span class="block-num">04</span>
+      <h2 class="block-title">Wer erhält die von Ihnen überlassenen personenbezogenen Daten?</h2>
+    </div>
+    <div class="block-body">
+      <div></div>
+      <div>
+        <p>Innerhalb unseres Unternehmens erhalten diejenigen Bereiche Zugriff auf die von Ihnen überlassenen personenbezogenen Daten, die diese zur Erfüllung der vertraglichen und gesetzlichen Pflichten benötigen und die zur Verarbeitung dieser Daten berechtigt sind.</p>
+        <p>In Erfüllung des mit Ihnen geschlossenen Vertrages erhalten ausschließlich diejenigen Stellen die von Ihnen überlassenen Daten, die diese aus gesetzlichen Gründen benötigen, z. B. Finanzbehörden, Sozialversicherungsträger, zuständige Behörden und Gerichte.</p>
+        <p>Als Berufsgeheimnisträger sind wir verpflichtet die berufsrechtliche Verschwiegenheit einzuhalten und umzusetzen. Weitere Empfänger erhalten die von Ihnen überlassenen Daten nur auf Ihren Wunsch hin, wenn Sie uns von der berufsrechtlichen Verschwiegenheit entbinden.</p>
+        <p>Im Rahmen unserer Leistungserbringung beauftragen wir Auftragsverarbeiter, die zur Erfüllung der vertraglichen Pflichten beitragen, z. B. Rechenzentrumsdienstleister, EDV-Partner, Aktenvernichter etc. Diese Auftragsverarbeiter werden von uns vertraglich zur Einhaltung der berufsrechtlichen Verschwiegenheit sowie zur Einhaltung der Vorgaben der DS-GVO und des BDSG verpflichtet.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 05 Drittländer -->
+  <div class="block">
+    <div class="block-head">
+      <span class="block-num">05</span>
+      <h2 class="block-title">Übermittlung an Drittländer</h2>
+    </div>
+    <div class="block-body">
+      <div></div>
+      <div>
+        <p>Eine Übermittlung der von Ihnen überlassenen Daten an ein Drittland oder eine internationale Organisation erfolgt in keinem Fall. Sollten Sie im Einzelfall die Übermittlung der von Ihnen überlassenen Daten an ein Drittland oder eine internationale Organisation wünschen, führen wir dies nur nach Ihrer schriftlichen Einwilligung und Entbindung von der berufsrechtlichen Verschwiegenheit durch.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 06 Automatisierte Entscheidungsfindung -->
+  <div class="block">
+    <div class="block-head">
+      <span class="block-num">06</span>
+      <h2 class="block-title">Automatisierte Entscheidungsfindung</h2>
+    </div>
+    <div class="block-body">
+      <div></div>
+      <div>
+        <p>Zur Verarbeitung der von Ihnen überlassenen Daten kommt keine vollautomatisierte Entscheidungsfindung (einschließlich Profiling) gem. Art. 22 DS-GVO zum Einsatz.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 07 Speicherdauer -->
+  <div class="block">
+    <div class="block-head">
+      <span class="block-num">07</span>
+      <h2 class="block-title">Dauer der Verarbeitung</h2>
+    </div>
+    <div class="block-body">
+      <div></div>
+      <div>
+        <p>Die Verarbeitung der von Ihnen überlassenen Daten erfolgt so lange, wie sie zur Erreichung des vertraglich vereinbarten Zweckes notwendig ist, grundsätzlich so lange das Vertragsverhältnis mit Ihnen besteht. Nach der Beendigung des Vertragsverhältnisses werden die von Ihnen überlassenen Daten zur Einhaltung gesetzlicher Aufbewahrungspflichten oder aufgrund unserer berechtigten Interessen verarbeitet. Nach dem Ablauf der gesetzlichen Aufbewahrungsfristen und/oder dem Wegfall unserer berechtigten Interessen werden die von Ihnen überlassenen Daten gelöscht.</p>
+        <p style="margin-top:20px">Voraussichtliche Fristen der uns treffenden Aufbewahrungspflichten und unserer berechtigten Interessen:</p>
+        <ul>
+          <li>Erfüllung handels-, steuer- und berufsrechtlicher Aufbewahrungsfristen. Die dort vorgegebenen Fristen zur Aufbewahrung bzw. Dokumentation betragen zwei bis zehn Jahre.</li>
+          <li>Erhaltung von Beweismitteln im Rahmen der Verjährungsvorschriften. Nach den §§ 195 ff. des Bürgerlichen Gesetzbuches (BGB) können diese Verjährungsfristen bis zu 30 Jahre betragen, wobei die regelmäßige Verjährungsfrist drei Jahre beträgt.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 08 Ihre Rechte -->
+  <div class="block">
+    <div class="block-head">
+      <span class="block-num">08</span>
+      <h2 class="block-title">Auskunft über Ihre Rechte</h2>
+    </div>
+    <div class="block-body">
+      <div></div>
+      <div class="rights-grid">
+        <div class="rights-item">
+          <div class="rights-item__art">Art. 15 DS-GVO</div>
+          <div class="rights-item__title">Auskunft</div>
+          <p class="rights-item__text">Sie haben das Recht, auf Antrag unentgeltlich Auskunft zu erhalten, ob und welche Daten über Sie gespeichert sind und zu welchem Zweck die Speicherung erfolgt.</p>
+        </div>
+        <div class="rights-item">
+          <div class="rights-item__art">Art. 16 DS-GVO</div>
+          <div class="rights-item__title">Berichtigung</div>
+          <p class="rights-item__text">Sie haben das Recht, von dem Verantwortlichen unverzüglich die Berichtigung Ihrer unrichtigen personenbezogenen Daten zu verlangen. Unter Berücksichtigung der Zwecke der Verarbeitung haben Sie das Recht, die Vervollständigung unvollständiger personenbezogener Daten — auch mittels einer ergänzenden Erklärung — zu verlangen.</p>
+        </div>
+        <div class="rights-item">
+          <div class="rights-item__art">Art. 17 DS-GVO</div>
+          <div class="rights-item__title">Löschung</div>
+          <p class="rights-item__text">Sie haben das Recht, von dem Verantwortlichen zu verlangen, dass Ihre Daten unverzüglich gelöscht werden, sofern einer der folgenden Gründe zutrifft:</p>
+          <ul class="rights-item__list">
+            <li>Zwecke, für die die personenbezogenen Daten erhoben wurden, entfallen</li>
+            <li>Sie widerrufen Ihre Einwilligung der Verarbeitung und eine anderweitige Rechtsgrundlage liegt nicht vor</li>
+            <li>Sie widersprechen der Verarbeitung und eine anderweitige Rechtsgrundlage liegt nicht vor</li>
+            <li>Die personenbezogenen Daten wurden unrechtmäßig verarbeitet</li>
+            <li>Die Löschung ist zur Erfüllung einer rechtlichen Verpflichtung erforderlich</li>
+            <li>Die Daten wurden in Bezug auf Dienste der Informationsgesellschaft gem. Art. 8 Abs. 1 erhoben</li>
+          </ul>
+        </div>
+        <div class="rights-item">
+          <div class="rights-item__art">Art. 18 DS-GVO · § 35 BDSG</div>
+          <div class="rights-item__title">Einschränkung</div>
+          <p class="rights-item__text">Sie haben das Recht die Einschränkung der Verarbeitung zu verlangen, wenn eine der folgenden Voraussetzungen gegeben ist:</p>
+          <ul class="rights-item__list">
+            <li>Die Richtigkeit der personenbezogenen Daten wird von Ihnen angezweifelt</li>
+            <li>Die Verarbeitung ist unrechtmäßig, Sie lehnen eine Löschung jedoch ab</li>
+            <li>Daten werden für die Verarbeitung nicht länger benötigt, Sie benötigen sie zur Geltendmachung von Rechtsansprüchen</li>
+            <li>Sie haben Widerspruch gem. Art. 21 Abs. 1 DS-GVO eingelegt</li>
+          </ul>
+        </div>
+        <div class="rights-item">
+          <div class="rights-item__art">Art. 20 DS-GVO</div>
+          <div class="rights-item__title">Datenübertragbarkeit</div>
+          <p class="rights-item__text">Sie haben das Recht die von Ihnen bereitgestellten Daten in einem strukturierten, gängigen und maschinenlesbaren Format von dem Verantwortlichen zu erhalten. Eine Weiterleitung an einen anderen Verantwortlichen darf von uns nicht behindert werden.</p>
+        </div>
+        <div class="rights-item">
+          <div class="rights-item__art">Art. 21 DS-GVO</div>
+          <div class="rights-item__title">Widerspruch</div>
+          <p class="rights-item__text">Sie haben das Recht, der Verarbeitung Ihrer personenbezogenen Daten zu widersprechen. Hierzu wenden Sie sich bitte an den Verantwortlichen der Verarbeitung (s. o.).</p>
+        </div>
+        <div class="rights-item">
+          <div class="rights-item__art">Art. 7 Abs. 3 DS-GVO</div>
+          <div class="rights-item__title">Widerruf</div>
+          <p class="rights-item__text">Beruht die Verarbeitung auf Ihrer Einwilligung gem. Art. 6 Abs. 1 Lit. a oder Art. 9 Abs. 2 Lit. a, sind Sie jederzeit dazu berechtigt die zweckmäßig gebundene Einwilligung zurückzuziehen, ohne dass die Rechtmäßigkeit der aufgrund der Einwilligung bis zum Widerruf erfolgten Verarbeitung berührt wird.</p>
+        </div>
+        <div class="rights-item">
+          <div class="rights-item__art">Art. 13 Abs. 2 Lit. d · Art. 77 DS-GVO · § 19 BDSG</div>
+          <div class="rights-item__title">Beschwerde</div>
+          <p class="rights-item__text">Wenn Sie der Ansicht sind, dass die Verarbeitung Ihrer Daten gegen die DS-GVO verstößt, haben Sie das Recht, Beschwerde bei der Aufsichtsbehörde einzulegen. Eine Auflistung der zuständigen Aufsichtsbehörden nach Bundesländern finden Sie unter <a href="https://www.datenschutz-wiki.de" target="_blank" rel="noopener">datenschutz-wiki.de</a>. Weitere Informationen finden Sie auf der Seite des <a href="https://www.bfdi.bund.de" target="_blank" rel="noopener">BFDI — Die Bundesbeauftragte für den Datenschutz und die Informationsfreiheit</a>.</p>
+        </div>
+      </div>
+    </div>
+    <div class="block-body" style="margin-top:32px">
+      <div></div>
+      <p style="font-size:17px;line-height:1.75;color:var(--ink-70)">Ihnen stehen grundsätzlich die Rechte auf Auskunft, Berichtigung oder Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit, Widerruf und Widerspruch gegen die Verarbeitung zu. Wenn Sie glauben, dass die Verarbeitung Ihrer Daten gegen das Datenschutzrecht verstößt oder Ihre datenschutzrechtlichen Ansprüche sonst in einer Weise verletzt worden sind, können Sie sich bei der Aufsichtsbehörde beschweren.</p>
+    </div>
+  </div>
+
+  <!-- 09 Social Media -->
+  <div class="block">
+    <div class="block-head">
+      <span class="block-num">09</span>
+      <h2 class="block-title">Verwendung von Social Media</h2>
+    </div>
+    <div class="block-body">
+      <div></div>
+      <div>
+        <p>Die Informationen auf dieser Website werden ergänzt durch Buttons der sozialen Netzwerke Facebook, Instagram und des Videoportals YouTube. Mit dem Aufruf dieser Seite werden keine Daten automatisch an Server der Betreiber dieser Dienste übermittelt. Die Buttons sind nur mit Links hinterlegt, d. h. es sind keine Plugins der jeweiligen Anbieter implementiert, die bereits vor dem Anklicken der Buttons Daten übertragen. Erst bei Anklicken der Buttons findet eine Datenübermittlung an die jeweiligen Dienstleister statt.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 10 Allgemeine Erfassung -->
+  <div class="block">
+    <div class="block-head">
+      <span class="block-num">10</span>
+      <h2 class="block-title">Allgemeine Erfassung bei Zugriffen</h2>
+    </div>
+    <div class="block-body">
+      <div></div>
+      <div>
+        <p>Wir erfassen mit jedem Aufruf der Internetseite durch eine betroffene Person oder ein automatisiertes System eine Reihe von allgemeinen Daten und Informationen. Diese allgemeinen Daten und Informationen werden in den Logfiles des Servers gespeichert. Erfasst werden:</p>
+        <ul>
+          <li>eine Internet-Protokoll-Adresse (IP-Adresse)</li>
+          <li>das Datum und die Uhrzeit des Zugriffs auf die Internetseite</li>
+          <li>die genaue Unterseite, die auf unserer Internetseite angesteuert wurde</li>
+          <li>die Internetseite, von welcher Sie auf unsere Internetseite gelangt sind (sogenannte Referer)</li>
+          <li>der verwendete Browser und dessen Version</li>
+          <li>das für den Zugriff verwendete Betriebssystem</li>
+        </ul>
+        <p style="margin-top:20px">Die genannten Daten werden durch uns verarbeitet, um einen reibungslosen Verbindungsaufbau der Internetseite zu gewährleisten, Inhalte unserer Internetseite für Sie zu optimieren, und um die Systemsicherheit und Stabilität zu gewährleisten. Diese Punkte liegen in Ihrem und unserem berechtigten Interesse. Daneben verwenden wir diese Daten gegebenenfalls auch, um unseren rechtlichen Verpflichtungen in der Zusammenarbeit mit Strafverfolgungsbehörden nachzukommen. In keinem Fall verwenden wir die erhobenen Daten zu dem Zweck, Rückschlüsse auf Ihre Person zu ziehen. Die Rechtsgrundlage für die Datenverarbeitung ist Artikel 6 Abs. 1 lit. f DSGVO. Die Speicherdauer dieser Logfiles beträgt 2 Monate.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 11 Kontaktformular -->
+  <div class="block">
+    <div class="block-head">
+      <span class="block-num">11</span>
+      <h2 class="block-title">Terminvereinbarung &amp; Kontakt</h2>
+    </div>
+    <div class="block-body">
+      <div></div>
+      <div>
+        <p>Wenn Sie per Formular auf der Website oder per E-Mail Kontakt mit uns aufnehmen, oder sich bewerben, speichern wir die von Ihnen mitgeteilten, sowie die oben beschriebenen allgemeinen Daten. Durch das Benutzen unseres Formulars willigen Sie in die Verarbeitung Ihrer Daten ein. Wir geben die Daten nicht an Dritte weiter und verwenden die Daten ausschließlich zur Bearbeitung der Kontaktaufnahme und zur Beantwortung der jeweiligen Anfrage. Im Falle einer Kontaktaufnahme per E-Mail liegt in der Bearbeitung der Kontaktaufnahme zugleich das erforderliche berechtigte Interesse an der Verarbeitung der Daten. Rechtsgrundlage für die Verarbeitung der Daten ist bei Vorliegen einer Einwilligung des Nutzers Artikel 6 Abs. 1 lit. a DSGVO. Rechtsgrundlage für die Verarbeitung der Daten, die im Rahmen der Übersendung einer E-Mail übermittelt werden, ist Artikel 6 Abs. 1 lit. f DSGVO. Die uns im Zuge der Kontaktaufnahme übermittelten Daten werden gelöscht, sobald sie für die Erreichung des vorgenannten Zwecks nicht mehr benötigt werden. Soweit es die personenbezogenen Daten aus dem Kontaktformular und die per E-Mail übersandten Daten angeht, ist dies der Fall, sobald die jeweilige Konversation beendet ist. Das wiederum ist der Fall, sobald der Sachverhalt den Umständen nach abschließend geklärt ist. Soweit die Kontaktaufnahme auch auf den Abschluss eines Vertrages abzielt, ist weitere Rechtsgrundlage Artikel 6 Abs. 1 lit. b DSGVO. In diesem Fall bewahren wir Ihre Anfrage als Geschäftsbrief 7 Jahre auf.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 12 Cookies -->
+  <div class="block">
+    <div class="block-head">
+      <span class="block-num">12</span>
+      <h2 class="block-title">Cookies</h2>
+    </div>
+    <div class="block-body">
+      <div></div>
+      <div>
+        <p>Um Ihnen eine bessere Nutzung unserer Website zu ermöglichen, setzen wir die als „Cookies" bekannten kleinen Textdateien ein, um Präferenzen der Nutzer zu verfolgen und unsere Website entsprechend optimal gestalten zu können. Cookies verwenden wir jedoch nicht, um die einzelnen Besuche unserer Website zu verfolgen. Cookies werden heute von den meisten Websites routinemäßig eingesetzt. Sollten Sie in dieser Hinsicht jedoch Bedenken haben, können Sie Ihren Browser auch so einstellen, dass er keine Cookies akzeptiert.</p>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+
+<footer>
+  <img src="Tributum Brandkit/assets/justitia.png" alt="" class="footer-mark">
+  <div class="footer-in">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand__name">Tributum</div>
+        <div class="footer-brand__sub">Steuerberatung &amp; Rechtsberatung</div>
+        <div class="footer-brand__contact">
+          Am Schlangenhorst 50 · 14656 Brieselang<br>
+          hello@tributum-berlin.com<br>
+          +49 171 5141130
+        </div>
+      </div>
+      <div class="footer-cols">
+        <div>
+          <div class="footer-col__title">Leistungen</div>
+          <ul class="footer-col__links">
+            <li><a href="index.html#leistungen">Digitale Buchhaltung</a></li>
+            <li><a href="index.html#leistungen">EÜR &amp; Jahresabschlüsse</a></li>
+            <li><a href="index.html#leistungen">Existenzgründung &amp; GmbH-Gründung</a></li>
+            <li><a href="index.html#leistungen">Steuer- &amp; Rechtsberatung</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col__title">Kanzlei</div>
+          <ul class="footer-col__links">
+            <li><a href="ueber-uns.html">Über uns</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
+            <li><a href="index.html#erstgespraech">Erstgespräch</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col__title">Rechtliches</div>
+          <ul class="footer-col__links">
+            <li><a href="impressum.html">Impressum</a></li>
+            <li><a href="datenschutz.html">Datenschutz</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-legal">
+        <span>© 2026 TRIBUTUM Steuer- und Anwaltskanzlei Claudia Paschke</span>
+        <span>Stand: Mai 2026</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
