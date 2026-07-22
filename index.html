@@ -10,6 +10,57 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
 
+  <link rel="canonical" href="https://tributum-berlin.com/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Tributum" />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:title" content="Tributum · Steuerberatung Berlin" />
+  <meta property="og:description" content="Tributum ist eine digitale Steuerberatung für Gründer, Freiberufler und Unternehmen jeder Größe. Beratung, die mitdenkt und begleitet." />
+  <meta property="og:url" content="https://tributum-berlin.com/" />
+  <meta property="og:image" content="https://tributum-berlin.com/images/og-tributum.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Tributum · Steuerberatung Berlin" />
+  <meta name="twitter:description" content="Tributum ist eine digitale Steuerberatung für Gründer, Freiberufler und Unternehmen jeder Größe. Beratung, die mitdenkt und begleitet." />
+  <meta name="twitter:image" content="https://tributum-berlin.com/images/og-tributum.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["LegalService", "AccountingService"],
+    "@id": "https://tributum-berlin.com/#kanzlei",
+    "name": "Tributum Steuer- und Anwaltskanzlei Claudia Paschke",
+    "legalName": "Tributum Steuer- und Anwaltskanzlei Claudia Paschke",
+    "url": "https://tributum-berlin.com/",
+    "description": "Digitale Steuerberatung und Rechtsberatung für Gründer, Freiberufler und Unternehmen in Berlin und Brandenburg.",
+    "image": "https://tributum-berlin.com/images/og-tributum.png",
+    "logo": "https://tributum-berlin.com/Logos/t-hero.png",
+    "telephone": "+491715141130",
+    "email": "hello@tributum-berlin.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Am Schlangenhorst 50",
+      "postalCode": "14656",
+      "addressLocality": "Brieselang",
+      "addressRegion": "Brandenburg",
+      "addressCountry": "DE"
+    },
+    "areaServed": [
+      { "@type": "City", "name": "Berlin" },
+      { "@type": "AdministrativeArea", "name": "Brandenburg" }
+    ],
+    "founder": {
+      "@type": "Person",
+      "name": "Claudia Paschke",
+      "jobTitle": "Rechtsanwältin für Steuerrecht"
+    },
+    "knowsAbout": ["Steuerrecht", "Steuerberatung", "Existenzgründung", "GmbH-Gründung", "Jahresabschluss"]
+  }
+  </script>
+  <!-- TODO nach Business-Profile-API-Setup: openingHoursSpecification + sameAs (Google-Business-Profil-URL) ergänzen -->
+
   <style>
     /* ─── Tokens ─── */
     :root {
@@ -113,6 +164,27 @@
     }
     .nav-cta:hover { background: var(--brass); color: var(--ink); }
     .nav-cta:active { transform: scale(.97); }
+
+    /* ─── Mobile Nav (Burger + Off-Canvas-Menü) ─── */
+    .nav-burger { display: none; }
+    .mobile-menu {
+      position: fixed; inset: var(--nav-h) 0 0 0; z-index: 190;
+      background: var(--ink);
+      display: flex; flex-direction: column; justify-content: center; gap: 6px;
+      padding: 32px;
+      transform: translateY(-100%); opacity: 0; visibility: hidden;
+      transition: transform .5s cubic-bezier(.23,1,.32,1), opacity .4s, visibility .5s;
+    }
+    .mobile-menu.is-open { transform: translateY(0); opacity: 1; visibility: visible; }
+    .mobile-menu a {
+      font-family: var(--fd); font-weight: 500; font-size: 34px; letter-spacing: -.02em;
+      color: var(--paper); text-decoration: none;
+      padding: 14px 0; border-bottom: 1px solid var(--p08);
+    }
+    .mobile-menu__cta {
+      font-family: var(--fm); font-size: 14px; letter-spacing: .16em; text-transform: uppercase;
+      color: var(--brass); border-bottom: none; margin-top: 24px;
+    }
 
     /* ─── Hero ─── */
     .hero {
@@ -651,29 +723,73 @@
       .acc-pullquote { margin: 0 -56px; padding: 48px 128px; }
     }
     @media (max-width: 768px) {
-      nav { padding: 0 24px; }
+      nav { padding: 0 24px; display: flex; justify-content: space-between; gap: 16px; }
       .nav-links { display: none; }
-      .hero { grid-template-columns: 1fr; grid-template-rows: auto; height: auto; overflow: hidden; }
-      .hero-right { display: none; }
-      .hero-left { min-height: auto; }
-      .hero::after {
-        content: '';
-        position: absolute; right: -32px; bottom: -16px;
-        width: 220px; height: 220px;
-        background: url('Tributum Brandkit/assets/justitia-on-dark.png') no-repeat center/contain;
-        opacity: .055;
-        pointer-events: none;
-        mix-blend-mode: screen;
+      .nav-cta   { display: none; }
+      .nav-logo img { height: 48px; }
+      .nav-mark__word { font-size: 20px; letter-spacing: .30em; padding-left: .30em; }
+      .nav-mark__sub  { display: none; }
+      .nav-mark__rule { max-width: 120px; }
+      .nav-burger {
+        display: flex; flex-direction: column; justify-content: center; gap: 5px;
+        width: 40px; height: 40px; padding: 9px 6px; flex-shrink: 0;
+        background: none; border: 1px solid var(--p20); cursor: pointer;
       }
-      .hero-left { padding: 64px 28px 72px; }
+      .nav-burger span { height: 1.5px; width: 100%; background: var(--brass); transition: transform .3s cubic-bezier(.23,1,.32,1), opacity .2s; }
+      .nav-burger.is-open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+      .nav-burger.is-open span:nth-child(2) { opacity: 0; }
+      .nav-burger.is-open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+      .hero { grid-template-columns: 1fr; grid-template-rows: auto auto; height: auto; overflow: hidden; }
+      .hero-left { min-height: auto; padding: 64px 28px 40px; }
+      .hero-right {
+        display: flex; border-left: none; border-top: 1px solid var(--p15);
+        background: none; min-height: 260px; padding: 32px 28px 56px;
+      }
+      .hero-right img { height: auto; max-height: 230px; max-width: 62%; opacity: .9; mix-blend-mode: screen; }
       .sec-in { padding: 72px 28px; }
       .sh { grid-template-columns: 1fr; gap: 20px; }
       .sh-num-col { flex-direction: row; align-items: center; }
       .prz-grid { grid-template-columns: 1fr; }
-      .pc-head, .pc-row { grid-template-columns: 1fr; gap: 6px; text-align: left; }
-      .pc-head__against, .pc-head__for, .pc-against, .pc-for { text-align: left; padding: 0; }
-      .pc-num, .pc-head span:empty { display: none; }
-      .pc-row { padding: 22px 0; }
+
+      /* Logos-Marquee: Desktop-Maske war auf 1440px kalibriert, kollabiert auf Mobile */
+      .logos-strip {
+        -webkit-mask-image: linear-gradient(to right, transparent 0, #000 28px, #000 calc(100% - 28px), transparent 100%);
+        mask-image: linear-gradient(to right, transparent 0, #000 28px, #000 calc(100% - 28px), transparent 100%);
+      }
+
+      /* Fokus-Slider: Bild oben, Text darunter gestapelt statt nebeneinander */
+      .fokus-inner { height: auto; }
+      .fokus-slide {
+        position: relative; opacity: 1; pointer-events: auto;
+        flex-direction: column; align-items: stretch;
+        gap: 32px; padding: 56px 28px;
+        display: none;
+      }
+      .fokus-slide.is-active { display: flex; }
+      .fokus-img { width: 100%; }
+      .fokus-cap { text-align: left; }
+      .fokus-title { font-size: clamp(30px, 8vw, 40px); margin-bottom: 16px; }
+      .fokus-body  { font-size: 17px; line-height: 1.7; max-width: none; }
+
+      /* Testimonials-Karten an Viewport-Breite anpassen statt fix 400px */
+      .testi-card  { width: 82vw; max-width: 340px; padding: 40px 30px; gap: 28px; }
+      .testi-quote { font-size: 20px; }
+      .testi-rating { flex-direction: column; gap: 10px; margin-top: 32px; }
+      .testi-rating-line { display: none; }
+
+      /* Pain-Points: Kontrast-Charakter pro Zeile statt nur einmaligem Kopf-Label */
+      .pc-head { display: none; }
+      .pc-row  { grid-template-columns: 1fr; gap: 4px; padding: 20px 0; }
+      .pc-num  { display: none; }
+      .pc-against, .pc-for { text-align: left; padding: 0 0 0 16px; position: relative; }
+      .pc-against { border-left: 2px solid var(--brass);  color: var(--ink); }
+      .pc-for     { border-left: 2px solid var(--ink-20); color: var(--ink-50); font-style: italic; }
+      .pc-against::before, .pc-for::before {
+        display: block; font-family: var(--fm); font-size: 9px;
+        letter-spacing: .16em; text-transform: uppercase; margin-bottom: 6px;
+      }
+      .pc-against::before { content: 'Mit uns';  color: var(--brass); }
+      .pc-for::before     { content: 'Ohne uns'; color: var(--ink-50); }
       .vsp-item { grid-template-columns: 56px 1fr; gap: 20px; flex-wrap: wrap; }
       .vsp-p { grid-column: 2; }
       .acc-btn { grid-template-columns: 52px 1fr 28px; gap: 16px; }
@@ -708,7 +824,18 @@
   </ul>
 
   <a href="#erstgespraech" class="nav-cta">Erstgespräch →</a>
+  <button class="nav-burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <a href="#leistungen">Leistungen</a>
+  <a href="#mandanten">Mandanten</a>
+  <a href="ueber-uns.html">Über uns</a>
+  <a href="#kontakt">Kontakt</a>
+  <a href="#erstgespraech" class="mobile-menu__cta">Erstgespräch →</a>
+</div>
 
 
 <!-- ── HERO ── -->
@@ -1444,6 +1571,24 @@ if (CALENDLY_LINK) {
     el.rel = 'noopener noreferrer';
   });
 }
+</script>
+
+<script>
+(function () {
+  const burger = document.querySelector('.nav-burger');
+  const menu = document.getElementById('mobile-menu');
+  if (!burger || !menu) return;
+  function setOpen(open) {
+    burger.classList.toggle('is-open', open);
+    menu.classList.toggle('is-open', open);
+    burger.setAttribute('aria-expanded', open);
+    menu.setAttribute('aria-hidden', !open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+  burger.addEventListener('click', () => setOpen(!menu.classList.contains('is-open')));
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setOpen(false)));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') setOpen(false); });
+})();
 </script>
 
 </body>

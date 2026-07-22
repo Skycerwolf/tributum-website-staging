@@ -10,6 +10,22 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
 
+  <link rel="canonical" href="https://tributum-berlin.com/impressum.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Tributum" />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:title" content="Impressum · Tributum Steuerberatung Berlin" />
+  <meta property="og:description" content="Impressum der Tributum Steuer- und Anwaltskanzlei Claudia Paschke, Berlin." />
+  <meta property="og:url" content="https://tributum-berlin.com/impressum.html" />
+  <meta property="og:image" content="https://tributum-berlin.com/images/og-tributum.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Impressum · Tributum Steuerberatung Berlin" />
+  <meta name="twitter:description" content="Impressum der Tributum Steuer- und Anwaltskanzlei Claudia Paschke, Berlin." />
+  <meta name="twitter:image" content="https://tributum-berlin.com/images/og-tributum.png" />
+
   <style>
     /* ─── Tokens (identisch mit index.html) ─── */
     :root {
@@ -94,6 +110,27 @@
     }
     .nav-cta:hover { background: var(--brass); color: var(--ink); }
     .nav-cta:active { transform: scale(.97); }
+
+    /* ─── Mobile Nav (Burger + Off-Canvas-Menü) ─── */
+    .nav-burger { display: none; }
+    .mobile-menu {
+      position: fixed; inset: var(--nav-h) 0 0 0; z-index: 190;
+      background: var(--ink);
+      display: flex; flex-direction: column; justify-content: center; gap: 6px;
+      padding: 32px;
+      transform: translateY(-100%); opacity: 0; visibility: hidden;
+      transition: transform .5s cubic-bezier(.23,1,.32,1), opacity .4s, visibility .5s;
+    }
+    .mobile-menu.is-open { transform: translateY(0); opacity: 1; visibility: visible; }
+    .mobile-menu a {
+      font-family: var(--fd); font-weight: 500; font-size: 34px; letter-spacing: -.02em;
+      color: var(--paper); text-decoration: none;
+      padding: 14px 0; border-bottom: 1px solid var(--p08);
+    }
+    .mobile-menu__cta {
+      font-family: var(--fm); font-size: 14px; letter-spacing: .16em; text-transform: uppercase;
+      color: var(--brass); border-bottom: none; margin-top: 24px;
+    }
 
     /* ─── Page Hero ─── */
     .page-hero {
@@ -231,8 +268,22 @@
     .footer-legal a:hover { color: rgba(245,240,232,.5); }
 
     @media (max-width: 768px) {
-      nav { padding: 0 24px; }
+      nav { padding: 0 24px; display: flex; justify-content: space-between; gap: 16px; }
       .nav-links { display: none; }
+      .nav-cta   { display: none; }
+      .nav-logo img { height: 48px; }
+      .nav-mark__word { font-size: 20px; letter-spacing: .30em; padding-left: .30em; }
+      .nav-mark__sub  { display: none; }
+      .nav-mark__rule { max-width: 120px; }
+      .nav-burger {
+        display: flex; flex-direction: column; justify-content: center; gap: 5px;
+        width: 40px; height: 40px; padding: 9px 6px; flex-shrink: 0;
+        background: none; border: 1px solid var(--p20); cursor: pointer;
+      }
+      .nav-burger span { height: 1.5px; width: 100%; background: var(--brass); transition: transform .3s cubic-bezier(.23,1,.32,1), opacity .2s; }
+      .nav-burger.is-open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+      .nav-burger.is-open span:nth-child(2) { opacity: 0; }
+      .nav-burger.is-open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
       .page-hero-in, main { padding-left: 28px; padding-right: 28px; }
       .page-hero-in, .block-head, .block-body { grid-template-columns: 1fr; gap: 16px; }
       .ph-num-col, .block-num-col { display: none; }
@@ -261,7 +312,18 @@
     <li><a href="index.html#kontakt">Kontakt</a></li>
   </ul>
   <a href="index.html#erstgespraech" class="nav-cta">Erstgespräch →</a>
+  <button class="nav-burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <a href="index.html#leistungen">Leistungen</a>
+  <a href="index.html#mandanten">Mandanten</a>
+  <a href="ueber-uns.html">Über uns</a>
+  <a href="index.html#kontakt">Kontakt</a>
+  <a href="index.html#erstgespraech" class="mobile-menu__cta">Erstgespräch →</a>
+</div>
 
 
 <div class="page-hero">
@@ -302,7 +364,7 @@
         </div>
         <div class="data-row">
           <div class="data-row__label">Telefon</div>
-          <div class="data-row__value"><a href="tel:+4917151411130">+49 171 5141130</a></div>
+          <div class="data-row__value"><a href="tel:+491715141130">+49 171 5141130</a></div>
         </div>
         <div class="data-row">
           <div class="data-row__label">E-Mail</div>
@@ -417,6 +479,24 @@
     </div>
   </div>
 </footer>
+
+<script>
+(function () {
+  const burger = document.querySelector('.nav-burger');
+  const menu = document.getElementById('mobile-menu');
+  if (!burger || !menu) return;
+  function setOpen(open) {
+    burger.classList.toggle('is-open', open);
+    menu.classList.toggle('is-open', open);
+    burger.setAttribute('aria-expanded', open);
+    menu.setAttribute('aria-hidden', !open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+  burger.addEventListener('click', () => setOpen(!menu.classList.contains('is-open')));
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setOpen(false)));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') setOpen(false); });
+})();
+</script>
 
 </body>
 </html>
