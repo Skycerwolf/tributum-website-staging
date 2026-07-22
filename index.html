@@ -244,7 +244,7 @@
     }
     /* ─── Trusted-by Logos ─── */
     .logos-strip {
-      background: var(--paper); overflow: hidden; padding: 44px 0;
+      background: var(--paper); overflow: hidden; padding: 44px 0 22px;
       /* Fade-Zonen an Hero-Landmarken ausgerichtet: links bis zur Erstgespräch-Buttonkante (~294px), rechts bis zum höchsten Punkt des Yin-Yang-Zeichens (~320px vom rechten Rand, gemessen bei 1440px Viewport) */
       -webkit-mask-image: linear-gradient(to right, transparent 0, #000 294px, #000 calc(100% - 320px), transparent 100%);
       mask-image: linear-gradient(to right, transparent 0, #000 294px, #000 calc(100% - 320px), transparent 100%);
@@ -333,6 +333,8 @@
     /* Testimonials/FAQ teilen dieselbe Hintergrundfarbe ohne Trenner — Übergang gezielt verkleinert */
     .testimonials .sec-in { padding-bottom: 48px; }
     .faq .sec-in { padding-top: 48px; }
+    /* Logos-Marquee → Leistungen: Übergang gezielt verkleinert */
+    .leistungen .sec-in { padding-top: 60px; }
 
     /* ─── Section head ─── */
     .sh {
