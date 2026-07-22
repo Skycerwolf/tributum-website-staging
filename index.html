@@ -728,8 +728,8 @@
       .nav-cta   { display: none; }
       .nav-logo img { height: 48px; }
       .nav-mark__word { font-size: 20px; letter-spacing: .30em; padding-left: .30em; }
-      .nav-mark__sub  { display: none; }
-      .nav-mark__rule { max-width: 120px; }
+      .nav-mark__sub  { font-size: 8px; }
+      .nav-mark__rule { width: 100%; }
       .nav-burger {
         display: flex; flex-direction: column; justify-content: center; gap: 5px;
         width: 40px; height: 40px; padding: 9px 6px; flex-shrink: 0;
@@ -743,9 +743,9 @@
       .hero-left { min-height: auto; padding: 64px 28px 40px; }
       .hero-right {
         display: flex; border-left: none; border-top: 1px solid var(--p15);
-        background: none; min-height: 260px; padding: 32px 28px 56px;
+        background: none; min-height: 260px; padding: 10px 28px 24px;
       }
-      .hero-right img { height: auto; max-height: 230px; max-width: 62%; opacity: .9; mix-blend-mode: screen; }
+      .hero-right img { height: auto; max-height: 300px; max-width: 72%; opacity: .9; mix-blend-mode: screen; }
       .sec-in { padding: 72px 28px; }
       .sh { grid-template-columns: 1fr; gap: 20px; }
       .sh-num-col { flex-direction: row; align-items: center; }
@@ -785,15 +785,21 @@
       .pc-against { border-left: 2px solid var(--brass);  color: var(--ink); }
       .pc-for     { border-left: 2px solid var(--ink-20); color: var(--ink-50); font-style: italic; }
       .pc-against::before, .pc-for::before {
-        display: block; font-family: var(--fm); font-size: 9px;
-        letter-spacing: .16em; text-transform: uppercase; margin-bottom: 6px;
+        display: block; font-family: var(--fm); font-size: 13px;
+        letter-spacing: .14em; text-transform: uppercase; margin-bottom: 8px;
       }
       .pc-against::before { content: 'Mit uns';  color: var(--brass); }
       .pc-for::before     { content: 'Ohne uns'; color: var(--ink-50); }
       .vsp-item { grid-template-columns: 56px 1fr; gap: 20px; flex-wrap: wrap; }
       .vsp-p { grid-column: 2; }
+      .vsp-t { font-size: 32px; font-weight: 600; margin-bottom: 4px; }
       .acc-btn { grid-template-columns: 52px 1fr 28px; gap: 16px; }
       .acc-body-in { padding-left: 68px; }
+      .prz-step { padding: 32px 28px; }
+      .prz-step__big { font-size: 56px; margin-bottom: 20px; }
+      .faq-q { font-size: 26px; font-weight: 600; }
+      .testimonials .sec-in { padding-bottom: 24px; }
+      .faq .sec-in { padding-top: 24px; }
       .cta-band .sec-in { grid-template-columns: 1fr; gap: 48px; }
       .footer-in { padding: 56px 28px 40px; }
       .footer-top { display: flex; flex-direction: column; gap: 40px; }
