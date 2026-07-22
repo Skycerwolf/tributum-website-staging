@@ -1,0 +1,6 @@
+# Alte Wix-URLs auf die neue Seitenstruktur umleiten (301, dauerhaft)
+/claudia-paschke   /ueber-uns.html   301
+/leistungen        /#leistungen      301
+/impressum         /impressum.html  301
+/datenschutz       /datenschutz.html 301
+/ueber-uns         /ueber-uns.html  301
