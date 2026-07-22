@@ -115,17 +115,17 @@
     /* ─── Mobile Nav (Burger + Off-Canvas-Menü) ─── */
     .nav-burger { display: none; }
     .mobile-menu {
-      position: fixed; inset: var(--nav-h) 0 0 0; z-index: 190;
-      background: var(--ink);
-      display: flex; flex-direction: column; justify-content: center; gap: 6px;
-      padding: 32px;
+      position: fixed; top: var(--nav-h); left: 0; right: 0; z-index: 190;
+      background: var(--ink); border-bottom: 1px solid var(--p15);
+      display: flex; flex-direction: column; align-items: center; gap: 6px;
+      padding: 40px 32px;
       transform: translateY(-100%); opacity: 0; visibility: hidden;
       transition: transform .5s cubic-bezier(.23,1,.32,1), opacity .4s, visibility .5s;
     }
     .mobile-menu.is-open { transform: translateY(0); opacity: 1; visibility: visible; }
     .mobile-menu a {
       font-family: var(--fd); font-weight: 500; font-size: 34px; letter-spacing: -.02em;
-      color: var(--paper); text-decoration: none;
+      color: var(--paper); text-decoration: none; text-align: center;
       padding: 14px 0; border-bottom: 1px solid var(--p08);
     }
     .mobile-menu__cta {
@@ -329,7 +329,7 @@
   <a href="index.html#mandanten">Mandanten</a>
   <a href="ueber-uns.html">Über uns</a>
   <a href="index.html#kontakt">Kontakt</a>
-  <a href="index.html#erstgespraech" class="mobile-menu__cta">Erstgespräch →</a>
+  <a href="index.html#erstgespraech" class="mobile-menu__cta">Erstgespräch</a>
 </div>
 
 
