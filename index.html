@@ -747,7 +747,7 @@
       .hero { grid-template-columns: 1fr; grid-template-rows: auto auto; height: auto; overflow: hidden; }
       .hero-left { min-height: auto; padding: 64px 28px 40px; }
       .hero-right {
-        display: flex; border-left: none; border-top: 1px solid var(--p15);
+        display: flex; justify-content: center; border-left: none; border-top: 1px solid var(--p15);
         background: none; min-height: 260px; padding: 32px 28px 24px;
       }
       .hero-right img { height: auto; max-height: 300px; max-width: 72%; opacity: .9; mix-blend-mode: screen; }
@@ -798,14 +798,14 @@
         font-size: 18px; padding: 0 0 0 16px;
       }
       .pc-against::before, .pc-for::before {
-        display: block; font-family: var(--fm); font-size: 13px;
+        display: block; font-family: var(--fm); font-size: 18px; white-space: nowrap;
         letter-spacing: .14em; text-transform: uppercase; margin-bottom: 8px;
       }
       .pc-against::before { content: '✓ Mit uns';  color: var(--brass); }
       .pc-for::before     { content: '– Ohne uns'; color: var(--ink-50); }
       .vsp-item { grid-template-columns: 56px 1fr; gap: 20px; flex-wrap: wrap; }
       .vsp-p { grid-column: 2; }
-      .vsp-t { font-size: 32px; font-weight: 600; margin-bottom: 4px; }
+      .vsp-t { font-size: 38px; font-weight: 600; margin-bottom: 4px; }
       .acc-btn { grid-template-columns: 52px 1fr 28px; gap: 16px; }
       .acc-body-in { padding-left: 68px; }
       .prz-step { padding: 32px 28px; }
