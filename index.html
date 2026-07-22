@@ -781,22 +781,30 @@
       .pc-head { display: none; }
       .pc-row  { grid-template-columns: 1fr; gap: 4px; padding: 20px 0; }
       .pc-num  { display: none; }
-      .pc-against, .pc-for { text-align: left; padding: 0 0 0 16px; position: relative; }
-      .pc-against { border-left: 2px solid var(--brass);  color: var(--ink); }
-      .pc-for     { border-left: 2px solid var(--ink-20); color: var(--ink-50); font-style: italic; }
+      .pc-against, .pc-for { text-align: left; position: relative; }
+      .pc-against {
+        border-left: 3px solid var(--brass); color: var(--ink);
+        font-size: 24px; font-weight: 600;
+        background: rgba(201,163,93,.08);
+        padding: 14px 16px; margin-bottom: 4px;
+      }
+      .pc-for {
+        border-left: 2px solid var(--ink-20); color: var(--ink-50); font-style: italic;
+        font-size: 18px; padding: 0 0 0 16px;
+      }
       .pc-against::before, .pc-for::before {
         display: block; font-family: var(--fm); font-size: 13px;
         letter-spacing: .14em; text-transform: uppercase; margin-bottom: 8px;
       }
-      .pc-against::before { content: 'Mit uns';  color: var(--brass); }
-      .pc-for::before     { content: 'Ohne uns'; color: var(--ink-50); }
+      .pc-against::before { content: '✓ Mit uns';  color: var(--brass); }
+      .pc-for::before     { content: '– Ohne uns'; color: var(--ink-50); }
       .vsp-item { grid-template-columns: 56px 1fr; gap: 20px; flex-wrap: wrap; }
       .vsp-p { grid-column: 2; }
       .vsp-t { font-size: 32px; font-weight: 600; margin-bottom: 4px; }
       .acc-btn { grid-template-columns: 52px 1fr 28px; gap: 16px; }
       .acc-body-in { padding-left: 68px; }
       .prz-step { padding: 32px 28px; }
-      .prozess .sh { margin-bottom: 24px; }
+      .prozess .sh, .pain .sh { margin-bottom: 24px; }
       .prz-step__big { font-size: 56px; margin-bottom: 20px; }
       .faq-q { font-size: 26px; font-weight: 600; }
       .testimonials .sec-in { padding-bottom: 24px; }
