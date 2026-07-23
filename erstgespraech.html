@@ -636,6 +636,7 @@
         <input class="wz-field" id="telefon" type="tel" name="telefon" required>
       </div>
       <div class="wz-err">Bitte fülle alle Felder aus.</div>
+      <div class="wz-err" id="wz-submit-err">Die Übermittlung hat leider nicht geklappt. Bitte versuche es erneut oder schreibe uns direkt an <a href="mailto:hello@tributum-berlin.com" style="color:inherit">hello@tributum-berlin.com</a>.</div>
       <div class="wz-nav">
         <button type="button" class="btn btn--line" data-nav="back">‹ Zurück</button>
         <button type="submit" class="btn btn--brass">Absenden →</button>
@@ -858,9 +859,12 @@
     const data = new URLSearchParams(new FormData(form)).toString();
     disabled.forEach(el => { el.disabled = false; });
 
+    const submitErr = document.getElementById('wz-submit-err');
+    if (submitErr) submitErr.classList.remove('is-shown');
+
     fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: data })
       .then(res => { if (!res.ok) throw new Error('submit failed'); i = order.indexOf('danke'); show('danke'); })
-      .catch(() => { form.submit(); }); // Fallback: normaler POST (z.B. Netlify-Formularerkennung noch nicht deployed), falls AJAX-Submit fehlschlägt
+      .catch(() => { if (submitErr) submitErr.classList.add('is-shown'); }); // Fehler bleibt auf der Seite sichtbar statt echter Navigation (die bei fehlender Formularerkennung selbst 404 auslöst und die Eingaben verwirft)
   });
 
   // Datenschutz-Gate fürs Bookings-iFrame
