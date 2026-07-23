@@ -843,7 +843,7 @@
     <li><a href="#kontakt">Kontakt</a></li>
   </ul>
 
-  <a href="#erstgespraech" class="nav-cta">Erstgespräch →</a>
+  <a href="erstgespraech.html" class="nav-cta">Erstgespräch →</a>
   <button class="nav-burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">
     <span></span><span></span><span></span>
   </button>
@@ -854,7 +854,7 @@
   <a href="#mandanten">Mandanten</a>
   <a href="ueber-uns.html">Über uns</a>
   <a href="#kontakt">Kontakt</a>
-  <a href="#erstgespraech" class="mobile-menu__cta">Erstgespräch</a>
+  <a href="erstgespraech.html" class="mobile-menu__cta">Erstgespräch</a>
 </div>
 
 
@@ -873,7 +873,7 @@
     </p>
 
     <div class="hero-ctas">
-      <a href="#erstgespraech" class="btn btn--fill">Erstgespräch →</a>
+      <a href="erstgespraech.html" class="btn btn--fill">Erstgespräch →</a>
       <a href="#leistungen" class="btn btn--ghost">Leistungen ansehen</a>
     </div>
   </div>
@@ -1210,7 +1210,7 @@
       </div>
     </div>
     <div class="prz-cta">
-      <a href="#erstgespraech" class="btn btn--brass" style="font-size:15px;padding:22px 56px">Erstgespräch →</a>
+      <a href="erstgespraech.html" class="btn btn--brass" style="font-size:15px;padding:22px 56px">Erstgespräch →</a>
     </div>
   </div>
 </section>
@@ -1390,7 +1390,7 @@
     <h2 class="cta-h">Zeit für<br>ein <em>Erstgespräch.</em></h2>
     <div class="cta-right">
       <p class="cta-sub">Das Erstgespräch ist kostenlos. Keine Verpflichtung. Kein Pitch. 30 Minuten. Du weißt, ob wir zusammenpassen.</p>
-      <a href="mailto:hello@tributum-berlin.com" data-booking class="btn btn--fill">Erstgespräch →</a>
+      <a href="erstgespraech.html" class="btn btn--fill">Erstgespräch →</a>
     </div>
   </div>
 </section>
@@ -1427,7 +1427,7 @@
           <ul class="footer-col__links">
             <li><a href="ueber-uns.html">Über uns</a></li>
             <li><a href="#faq">FAQ</a></li>
-            <li><a href="#erstgespraech">Erstgespräch</a></li>
+            <li><a href="erstgespraech.html">Erstgespräch</a></li>
           </ul>
         </div>
         <div>
@@ -1577,21 +1577,6 @@ document.querySelectorAll('.faq-btn').forEach(btn => {
   }, { threshold: 0.25, rootMargin: '-68px 0px -40% 0px' });
   sections.forEach(s => io.observe(s));
 })();
-</script>
-
-<script>
-/* ── Calendly-Vorbereitung ─────────────────────────────────────── */
-/* Link hier eintragen wenn verfügbar:                              */
-/* Beispiel: 'https://calendly.com/tributum/erstgespraech-30min'   */
-var CALENDLY_LINK = '';
-
-if (CALENDLY_LINK) {
-  document.querySelectorAll('[data-booking]').forEach(function (el) {
-    el.href = CALENDLY_LINK;
-    el.target = '_blank';
-    el.rel = 'noopener noreferrer';
-  });
-}
 </script>
 
 <script>
