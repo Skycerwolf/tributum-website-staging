@@ -780,7 +780,7 @@
     steps.forEach(s => s.classList.toggle('is-active', s.dataset.step === name));
     updateProgress(name);
     const first = byName(name)?.querySelector('input, select, textarea, button');
-    if (first) first.focus({ preventScroll: true });
+    if (first && first.tagName !== 'SELECT') first.focus({ preventScroll: true });
     window.scrollTo({ top: form.offsetTop - 120, behavior: 'smooth' });
   }
 
