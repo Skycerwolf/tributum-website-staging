@@ -804,7 +804,11 @@
     updateProgress(name);
     const first = byName(name)?.querySelector('input, select, textarea, button');
     if (first && first.tagName !== 'SELECT') first.focus({ preventScroll: true });
-    if (hasShown) window.scrollTo({ top: form.offsetTop - 120, behavior: 'smooth' });
+    if (hasShown) {
+      const consent = name === 'danke' ? document.querySelector('.wz-consent') : null;
+      const target = consent ? consent.getBoundingClientRect().top + window.scrollY - 120 : form.offsetTop - 120;
+      window.scrollTo({ top: target, behavior: 'smooth' });
+    }
     hasShown = true;
   }
 
