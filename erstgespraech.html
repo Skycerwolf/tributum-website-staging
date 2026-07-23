@@ -4,6 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Erstgespräch · Tributum Steuerberatung Berlin</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
   <meta name="description" content="Kostenloses Erstgespräch vereinbaren — beantworte ein paar Fragen zu deiner steuerlichen Situation und buche direkt einen Termin mit der Tributum Kanzlei." />
   <meta name="robots" content="noindex, nofollow" />
 
@@ -159,6 +162,14 @@
       font-family: var(--fm); font-size: 11px; letter-spacing: .16em;
       text-transform: uppercase; color: var(--p50); margin-top: 24px;
     }
+    /* Kompakter Hero + Main-Padding im Buchungsschritt, damit der Kalender ohne Scrollen passt (nur Desktop, Mobile bleibt unverändert gestapelt) */
+    @media (min-width: 900px) {
+      body.is-booking .page-hero-in { padding: 16px 96px 14px; grid-template-columns: auto 1fr; align-items: center; }
+      body.is-booking .ph-num-col { display: none; }
+      body.is-booking .ph-title { font-size: 22px; }
+      body.is-booking .ph-sub { margin-top: 4px; }
+      body.is-booking main { padding-top: 20px; padding-bottom: 24px; }
+    }
 
     /* ─── Buttons (aus index.html übernommen, dort nicht als Shared-CSS verfügbar) ─── */
     .btn {
@@ -177,7 +188,8 @@
       max-width: var(--max); margin: 0 auto;
       padding: 96px 96px 140px;
     }
-    .wizard { max-width: 720px; margin: 0 auto; }
+    .wizard { max-width: 720px; margin: 0 auto; transition: max-width .2s; }
+    .wizard.wizard--wide { max-width: 1040px; }
 
     .wizard-progress { margin-bottom: 14px; }
     .wizard-bar { height: 2px; background: var(--ink-20); margin-top: 10px; }
@@ -266,9 +278,16 @@
     .wz-consent a { color: var(--ink); text-underline-offset: 3px; }
     .wz-consent a:hover { color: var(--brass); }
     .wz-consent input { margin-top: 3px; }
+    @media (min-width: 900px) {
+      .wz-danke-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 40px; align-items: start; }
+      .wz-danke-grid .wz-danke { text-align: left; }
+      .wz-danke-grid .wz-danke .wz-q { font-size: 22px; margin-bottom: 6px; }
+      .wz-danke-grid .wz-danke .wz-hint { font-size: 14px; margin-bottom: 0; }
+      .wz-danke-grid .wz-consent { max-width: none; margin: 16px 0 0; }
+    }
 
     .booking-wrap { position: relative; margin-top: 8px; background: var(--paper-warm); min-height: 400px; }
-    .booking-wrap iframe { display: block; width: 100%; height: 1000px; border: 0; }
+    .booking-wrap iframe { display: block; width: 100%; height: min(680px, calc(100vh - 260px)); border: 0; }
     .booking-lock {
       position: absolute; inset: 0; z-index: 2;
       background: var(--paper-warm);
@@ -645,19 +664,23 @@
 
     <!-- ── DANKE / BOOKING ── -->
     <fieldset data-step="danke" data-path="both">
-      <div class="wz-danke">
-        <div class="wz-q">Danke — fast am Ziel.</div>
-        <p class="wz-hint">Deine Angaben sind bei uns angekommen. Wähle jetzt direkt einen Termin für dein Erstgespräch.</p>
-      </div>
-      <label class="wz-opt wz-consent">
-        <input type="checkbox" id="dsgvo-ok">
-        <span>Mit der Bestätigung dieses Termins stimme ich der <a href="datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a> zu. Ohne diese Bestätigung kann kein Termin gebucht werden.</span>
-      </label>
-      <div class="booking-wrap">
-        <div class="booking-lock" id="booking-lock">
-          <span>Bitte bestätige zuerst die Datenschutzerklärung oben, um den Kalender zu öffnen.</span>
+      <div class="wz-danke-grid">
+        <div>
+          <div class="wz-danke">
+            <div class="wz-q">Danke — fast am Ziel.</div>
+            <p class="wz-hint">Deine Angaben sind bei uns angekommen. Wähle jetzt direkt einen Termin für dein Erstgespräch.</p>
+          </div>
+          <label class="wz-opt wz-consent">
+            <input type="checkbox" id="dsgvo-ok">
+            <span>Mit der Bestätigung dieses Termins stimme ich der <a href="datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a> zu. Ohne diese Bestätigung kann kein Termin gebucht werden.</span>
+          </label>
         </div>
-        <iframe src="about:blank" data-booking-src="https://outlook.office.com/book/HelloTRIBUTUM@tributum-berlin.com/?ismsaljsauthenabled" width="100%" height="1000" frameborder="0" style="border:0" title="Termin buchen"></iframe>
+        <div class="booking-wrap">
+          <div class="booking-lock" id="booking-lock">
+            <span>Bitte bestätige zuerst die Datenschutzerklärung oben, um den Kalender zu öffnen.</span>
+          </div>
+          <iframe src="about:blank" data-booking-src="https://outlook.office.com/book/HelloTRIBUTUM@tributum-berlin.com/?ismsaljsauthenabled" width="100%" height="1000" frameborder="0" style="border:0" title="Termin buchen"></iframe>
+        </div>
       </div>
     </fieldset>
   </form>
@@ -773,12 +796,16 @@
     if (barEl) barEl.style.width = Math.round((idx / countableSteps.length) * 100) + '%';
   }
 
+  let hasShown = false;
   function show(name) {
     steps.forEach(s => s.classList.toggle('is-active', s.dataset.step === name));
+    form.classList.toggle('wizard--wide', name === 'danke');
+    document.body.classList.toggle('is-booking', name === 'danke');
     updateProgress(name);
     const first = byName(name)?.querySelector('input, select, textarea, button');
     if (first && first.tagName !== 'SELECT') first.focus({ preventScroll: true });
-    window.scrollTo({ top: form.offsetTop - 120, behavior: 'smooth' });
+    if (hasShown) window.scrollTo({ top: form.offsetTop - 120, behavior: 'smooth' });
+    hasShown = true;
   }
 
   function groupOk(fs, groupName) {
